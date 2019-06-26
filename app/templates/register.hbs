@@ -1,29 +1,89 @@
-<div class="container">
-  <div class="ui centered grid">
-    <div class="five wide column"></div>
-    <div class="six wide column">
-      <div class="ui raised segment">
-        <form class="ui form">
-          <div class="field">
-            <label>Username</label>
-            {{input value=this.model.username type="text" enter=(action "register")  placeholder="Enter name..."}}
-          </div>
-          <div class="field">
-            <label>E-mail</label>
-            {{input value=this.model.email type="text" enter=(action "register")  placeholder="Enter email..."}}
-          </div>
-          <div class="field">
-            <label>Enter Password</label>
-            {{input value=this.model.password type="password" enter=(action "register")  placeholder="Enter password..."}}
-          </div>
-          <div class="field">
-            <label>Enter Password Again</label>
-            {{input value=this.secondPassword type="password" enter=(action "register")  placeholder="Enter second password..."}}
-          </div>
-          <button class="ui inverted circular red button" type="submit" {{action "register"}}>Submit</button>
-        </form>
+{{#if (media 'isDesktop')}}
+  <div class="container">
+    <div class="ui centered grid">
+      <div class="five wide column"></div>
+      <div class="six wide column">
+        <div class="ui raised segment">
+          <form class="ui form">
+            <div class="field">
+              <label>Username</label>
+              {{input value=this.model.username type="text" enter=(action "register")  placeholder="Enter name..."}}
+            </div>
+            <div class="field">
+              <label>E-mail</label>
+              {{input value=this.model.email type="text" enter=(action "register")  placeholder="Enter email..."}}
+            </div>
+            <div class="field">
+              <label>Enter Password</label>
+              {{input value=this.model.password type="password" enter=(action "register")  placeholder="Enter password..."}}
+            </div>
+            <div class="field">
+              <label>Enter Password Again</label>
+              {{input value=this.secondPassword type="password" enter=(action "register")  placeholder="Enter second password..."}}
+            </div>
+            <button class="ui inverted circular red button" type="submit" {{action "register"}}>Submit</button>
+          </form>
+        </div>
       </div>
+      <div class="five wide column"></div>
     </div>
-    <div class="five wide column"></div>
   </div>
-</div>
+{{/if}}
+{{#if (media 'isTablet')}}
+  <div class="container">
+      <div class="ui centered grid">
+        <div class="sixteen wide column">
+          <div class="ui raised segment">
+            <form class="ui form">
+              <div class="field">
+                <label>Username</label>
+                {{input value=this.model.username type="text" enter=(action "register")  placeholder="Enter name..."}}
+              </div>
+              <div class="field">
+                <label>E-mail</label>
+                {{input value=this.model.email type="text" enter=(action "register")  placeholder="Enter email..."}}
+              </div>
+              <div class="field">
+                <label>Enter Password</label>
+                {{input value=this.model.password type="password" enter=(action "register")  placeholder="Enter password..."}}
+              </div>
+              <div class="field">
+                <label>Enter Password Again</label>
+                {{input value=this.secondPassword type="password" enter=(action "register")  placeholder="Enter second password..."}}
+              </div>
+              <button class="ui inverted circular red button" type="submit" {{action "register"}}>Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+{{/if}}
+{{#if (media 'isMobile')}}
+  <div class="container">
+      <div class="ui centered grid">
+        <div class="sixteen wide column">
+          <div class="ui raised segment">
+            <form class="ui form">
+              <div class="field">
+                <label>Username</label>
+                {{input value=this.model.username type="text" enter=(action "register")  placeholder="Enter name..."}}
+              </div>
+              <div class="field">
+                <label>E-mail</label>
+                {{input value=this.model.email type="text" enter=(action "register")  placeholder="Enter email..."}}
+              </div>
+              <div class="field">
+                <label>Enter Password</label>
+                {{input value=this.model.password type="password" enter=(action "register")  placeholder="Enter password..."}}
+              </div>
+              <div class="field">
+                <label>Enter Password Again</label>
+                {{input value=this.secondPassword type="password" enter=(action "register")  placeholder="Enter second password..."}}
+              </div>
+              <button class="ui inverted circular red button" type="submit" {{action "register"}}>Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+{{/if}}
