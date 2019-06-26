@@ -24,7 +24,7 @@ export default Controller.extend({
                           .then(doc => {
                               if (doc) {
                                   this.toastr.success("Successfully added user", "Congratulations");
-                                  document.location.reload();
+                                  window.location.replace('/login');
                               }
                           })
                           .catch(e => {
