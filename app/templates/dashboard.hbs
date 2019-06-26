@@ -25,26 +25,31 @@
                               {{#if (gt model.bmi 40)}}
                                 {{#ui-popup content="Heavily Overweight!"}}
                                   <h1 class="ui medium red header">{{model.bmi}}</h1>
+                                  <i class="info icon"></i>
                                 {{/ui-popup}}
                               {{else}}
                                 {{#if (lt model.bmi 40)}}
                                   {{#ui-popup content="Obesity!"}}
                                     <h1 class="ui medium orange header">{{model.bmi}}</h1>
+                                    <i class="info icon"></i>
                                   {{/ui-popup}}
                                 {{else}}
                                   {{#if (lt model.bmi 31)}}
                                     {{#ui-popup content="Overweight!"}}
                                       <h1 class="ui medium yellow header">{{model.bmi}}</h1>
+                                      <i class="info icon"></i>
                                     {{/ui-popup}}
                                   {{else}}
                                     {{#if (lt model.bmi 26)}}
                                       {{#ui-popup content="Normal Weight"}}
                                         <h1 class="ui medium green header">{{model.bmi}}</h1>
+                                        <i class="info icon"></i>
                                       {{/ui-popup}}
                                     {{else}}
                                       {{#if (lt model.bmi 20)}}
                                         {{#ui-popup content="Normal Weight" class="info icon" tagName="i"}}
                                           <h1 class="ui medium orange header">{{model.bmi}}</h1>
+                                          <i class="info icon"></i>
                                         {{/ui-popup}}
                                       {{/if}}
                                     {{/if}}
