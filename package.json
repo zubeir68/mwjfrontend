@@ -16,7 +16,7 @@
     "lint:js": "eslint .",
     "start": "ember serve",
     "test": "ember test",
-    "proxy": "ember server --proxy http://127.0.0.1:3000"
+    "proxy": "ember server --proxy http://mwjbackend.herokuapp.com"
   },
   "devDependencies": {
     "@ember/jquery": "^0.5.2",
