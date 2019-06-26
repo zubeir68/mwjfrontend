@@ -74,16 +74,14 @@ export default Controller.extend({
             if(this.newWeight !== "" || NaN(this.newWeight) !== true) {
                 this.model.forEach(async doc => {
                     doc.weights.pushObject(parseInt(this.newWeight));
-                    doc.dates.pushObject(Date.now());
+                    let date = Date.now();
+                    doc.dates.pushObject(date);
                     this.toastr.success('Successfully added new weight', 'Success');
                     set(this, 'newWeight', '');
                     await doc.save();
-                    let dates = doc.dates;
-                    dates.forEach(d => {
-                        let f = new Date(d);
-                        let a = f.getMonth();
-                        doc.formatDate.pushObject(a);
-                    });
+                    let f = new Date(date);
+                    let a = f.getMonth();
+                    doc.formatDate.pushObject(a);
                     set(this, "chartData", {
                         labels: doc.formatDate,
                         datasets: [
