@@ -3,6 +3,6 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 
 export default Route.extend(AuthenticatedRouteMixin, {
     beforeModel(/* transition */) {
-        this.transitionTo('dashboard'); // Implicitly aborts the on-going transition.
+        this.replaceWith('dashboard'); // Implicitly aborts the on-going transition.
     }
 });
