@@ -78,6 +78,12 @@ export default Controller.extend({
                     this.toastr.success('Successfully added new weight', 'Success');
                     set(this, 'newWeight', '');
                     await doc.save();
+                    let dates = doc.dates;
+                    dates.forEach(d => {
+                        let f = new Date(d);
+                        let a = f.getMonth();
+                        doc.formatDate.pushObject(a);
+                    });
                     set(this, "chartData", {
                         labels: doc.formatDate,
                         datasets: [
