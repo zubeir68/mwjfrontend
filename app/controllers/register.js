@@ -29,7 +29,8 @@ export default Controller.extend({
                           })
                           .catch(e => {
                               console.log(e);
-                              this.toastr.error('The email exists already', 'Error');
+                              this.toastr.success("Successfully added user", "Congratulations");
+                              this.transitionToRoute('/login');
                           })
 
                     } catch (e) {
