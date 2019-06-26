@@ -1,3 +1,5 @@
+
+{{#if (media 'isDesktop')}}
 <div class="ui container">
   <div class="ui centered grid">
     <div class="three wide column">
@@ -35,3 +37,75 @@
     </div>
   </div>
 </div>
+{{/if}}
+
+{{#if (media 'isTablet')}}
+<div class="ui container">
+  <div class="ui centered grid">
+    <div class="sixteen wide column">
+      <div class="ui red raised segment">
+        {{#if this.activeLoader}}
+          <div class="ui active inverted dimmer">
+            <div class="ui text loader">Loading user, please wait a moment</div>
+          </div>
+        {{else}}
+          <form {{action "authenticate" on="submit"}} class="ui form">
+            <label for="identification">Login</label>
+            {{input id="identification" placeholder="Enter Login" value=identification class="ui input"}}
+            <br>
+            <br>
+            <label for="password">Password</label>
+            {{input id="password" placeholder="Enter Password" type="password" value=password class="ui input"}} 
+            <br>
+            <br>
+            <button class="ui inverted red circular button" type="submit">Login</button>
+            <br>
+            <br>
+            {{#link-to "register"}}
+              Sign Up!
+            {{/link-to}} if not registered yet.
+            {{#if errorMessage}}
+            {{/if}}
+          </form>
+        {{/if}}
+
+      </div>
+    </div>
+    </div>
+  </div>
+{{/if}}
+{{#if (media 'isMobile')}}
+<div class="ui container">
+  <div class="ui centered grid">
+    <div class="sixteen wide column">
+      <div class="ui red raised segment">
+        {{#if this.activeLoader}}
+          <div class="ui active inverted dimmer">
+            <div class="ui text loader">Loading user, please wait a moment</div>
+          </div>
+        {{else}}
+          <form {{action "authenticate" on="submit"}} class="ui form">
+            <label for="identification">Login</label>
+            {{input id="identification" placeholder="Enter Login" value=identification class="ui input"}}
+            <br>
+            <br>
+            <label for="password">Password</label>
+            {{input id="password" placeholder="Enter Password" type="password" value=password class="ui input"}} 
+            <br>
+            <br>
+            <button class="ui inverted red circular button" type="submit">Login</button>
+            <br>
+            <br>
+            {{#link-to "register"}}
+              Sign Up!
+            {{/link-to}} if not registered yet.
+            {{#if errorMessage}}
+            {{/if}}
+          </form>
+        {{/if}}
+
+      </div>
+    </div>
+    </div>
+  </div>
+{{/if}}
