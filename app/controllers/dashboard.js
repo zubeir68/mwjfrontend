@@ -1,6 +1,7 @@
 /* eslint-disable ember/avoid-leaking-state-in-ember-objects */
 import Controller from '@ember/controller';
 import { set } from '@ember/object';
+import mathjs from 'mathjs';
 import { inject as service } from '@ember/service';
 
 export default Controller.extend({
@@ -116,7 +117,15 @@ export default Controller.extend({
                                 data: doc.weights
                             }
                         ]
-                    })
+                    });
+                    if(doc.unit === 'metric') {
+                        let m = mathjs.evaluate(`${doc.height} cm to m`);
+                        let bminum = Math.round(mathjs.evaluate(`${this.currentWeight} / ${m.value} ^ 2`))
+                        set(doc, 'bmi', bminum);
+                    } else {
+                        let bminum = Math.round(mathjs.evaluate(`${this.currentWeight} / ${doc.height} ^ 2 * 703`))
+                        set(doc, 'bmi', bminum);
+                    }
                 });
             }else {
                 this.toastr.error('Please enter valid number', 'Error');
