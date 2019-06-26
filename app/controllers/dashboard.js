@@ -74,16 +74,24 @@ export default Controller.extend({
     actions: {
         addNewWeight() {
             if(this.newWeight !== "" || NaN(this.newWeight) !== true) {
-                this.model.forEach(doc => {
+                this.model.forEach(async doc => {
                     doc.weights.pushObject(parseInt(this.newWeight));
                     doc.dates.pushObject(Date.now());
                     set(this, 'inputClass', 'ui disabled input');
                     set(this, 'buttonClass', 'ui inverted blue disable circular button')
                     this.toastr.success('Successfully added new weight', 'Success');
-                    doc.save();
-                    setTimeout(() => {
-                        document.location.reload();
-                    }, 1000);
+                    await doc.save();
+                    set(this, "chartData", {
+                        labels: doc.formatDate,
+                        datasets: [
+                            {
+                                label: "Weight-Progress -  Numbers stand for month",
+                                backgroundColor: "rgba(54,162,235,0.2)",
+                                borderColor: "rgba(54,162,235,0.8)",
+                                data: doc.weights
+                            }
+                        ]
+                    })
                 });
             }else {
                 this.toastr.error('Please enter valid number', 'Error');
