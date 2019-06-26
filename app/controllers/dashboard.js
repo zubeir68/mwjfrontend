@@ -28,9 +28,33 @@ export default Controller.extend({
                         data: doc.weights
                     }
                 ]
-            })
+            });
+
+            if (doc.bmi > 40) {
+                set(this, 'bmiValue', 'Heavily Overweight!')
+                set(this, 'color', 'red');
+            } 
+            else if (doc.bmi < 40 && doc.bmi >= 31) {
+                set(this, 'bmiValue', 'Adipositas');
+                set(this, 'color', 'orange');
+            }
+            else if (doc.bmi < 31 && doc.bmi >= 25) {
+                set(this, 'bmiValue', 'Overweight!');
+                set(this)
+            }
+            else if(doc.bmi < 25 && doc.bmi >= 20) {
+                set(this, 'bmiValue', 'Normal weight');
+                set(this, 'color', 'green');
+            }
+            else if (doc.bmi < 20) {
+                set(this, 'bmiValue', 'Underweight');
+                set(this, 'color', 'orange');
+            }
         });
     },
+
+    bmiValue: '',
+    color: '',
 
     chartData: {
         labels: [
