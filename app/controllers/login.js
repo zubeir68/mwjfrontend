@@ -17,6 +17,7 @@ export default Controller.extend({
         set(this, 'activeLoader', false);
         this.toastr.error("Password or Email is wrong", "Error");
       });
+      this.toastr.success('You are logged in', 'Have fun');
     }
   }
 });
