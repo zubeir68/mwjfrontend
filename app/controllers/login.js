@@ -16,6 +16,7 @@ export default Controller.extend({
         this.set('errorMessage', reason.error || reason);
         set(this, 'activeLoader', false);
         this.toastr.error("Password or Email is wrong", "Error");
+        console.log(reason)
       });
       this.toastr.success('You are logged in', 'Have fun');
     }
