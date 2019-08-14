@@ -11,5 +11,5 @@ export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
           xhr.setRequestHeader('Authorization', `Bearer ${access_token}`);
         }
     },
-    host: "http://localhost:3000",
+    host: "https://mwjbackend.herokuapp.com",
 });
