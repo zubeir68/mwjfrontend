@@ -7,6 +7,5 @@ export default Route.extend(ApplicationRouteMixin, {
 
     init() {
         this._super(...arguments);
-        console.log(this.session)
     }
 });
