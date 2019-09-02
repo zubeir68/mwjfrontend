@@ -5,9 +5,9 @@ module.exports = function(/* environment, appConfig */) {
   // supported properties
 
   return {
-    name: "MWJ",
-    short_name: "MWJ",
-    description: "Simple weight tracking application with graph",
+    name: "MyWeightJourney",
+    short_name: "MyWeightJourney",
+    description: "",
     start_url: "/",
     display: "standalone",
     background_color: "#fff",
